@@ -10,7 +10,7 @@
       <div class="menu-item">
         <router-link to="/gymap">地图</router-link>
       </div>
-      <a target="_blank" href="https://github.com/guoyao132/gy-commom/tree/gy-map-ts">
+      <a target="_blank" href="https://github.com/guoyao132/gy-map">
         <Icon size="24"> <LogoGithub /> </Icon>
       </a>
     </div>
