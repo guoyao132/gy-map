@@ -29,23 +29,17 @@ app.use(gyMap);
 
 ## 按需引入，在相应的页面中引入
 
-```javascript
+```
 import {Gymap, GymapHtml} from 'gy-Map'
-
-<
-Gymap
-  :mapOpt = "mapOpt"
-:
-zoom = "zoom"
-:
-center = "p"
-  >
-  < Gymap - html
-:
-position = "p"
-:
-offset = "o"
-  > < /Gymap-html>
+<Gymap
+  :mapOpt="mapOpt"
+  :zoom="zoom"
+  :center="p"
+>
+  <Gymap-html
+    :position="p"
+    :offset="o"
+  ></Gymap-html>
 </Gymap>
 ```
 
@@ -72,13 +66,13 @@ watch(mapFinish, n => {
   <div class="gy-map-con">
     <Gymap
       id="map2"
-    :mapOpt="mapOpt"
-    :zoom="zoom"
-    :center="center"
-    :layerOpacity="layerOpacity"
-    >
-  </Gymap>
-</div>
+      :mapOpt="mapOpt"
+      :zoom="zoom"
+      :center="center"
+      :layerOpacity="layerOpacity"
+      >
+    </Gymap>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -149,7 +143,7 @@ watch(mapFinish, n => {
     </tbody>
 </table>
 
-#其他组件
+# 其他组件
 - GymapText
   绘制文本
 - GymapCircle
