@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import {DemoGymapHtml1, DemoGymapHtml1_Code} from './demo/index'
 import GyTable from '@/components/GyTable.vue'
-import {ref} from "vue"
+import {ref} from 'vue'
 const propsData = ref([
   {
     shuxing: 'position',

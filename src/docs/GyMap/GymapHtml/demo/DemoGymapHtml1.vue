@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import MapCon from '@/components/MapCon.vue'
-import {ref} from "vue"
+import {ref} from 'vue'
 const position = ref([116.40531, 39.896884]);
 </script>
 <style>

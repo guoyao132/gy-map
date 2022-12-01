@@ -1,5 +1,5 @@
-import type {Ref, UnwrapRef} from 'vue'
-import {reactive, ref, markRaw} from "vue";
+import type {Ref, UnwrapRef} from 'vue-demi'
+import {reactive, ref, markRaw} from 'vue-demi';
 import type olType from 'ol'
 // @ts-ignore
 import Map from 'ol/Map';

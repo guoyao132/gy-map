@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import MapCon from '@/components/MapCon.vue'
-import {ref} from "vue"
+import {ref} from 'vue'
 const strokeColor = ref('blue')
 const polyPosList = ref([
   [

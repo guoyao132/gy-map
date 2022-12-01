@@ -4,8 +4,9 @@
 <script setup lang="ts">
 import GyPage from '@/components/GyPage.vue'
 import {ref} from 'vue';
+import type {Ref} from 'vue';
 
-let group = ref<LeftMenuGroup[]>([]);
+let group:Ref<LeftMenuGroup[]> = ref([]);
 group.value = [
   {
     title: '安装',

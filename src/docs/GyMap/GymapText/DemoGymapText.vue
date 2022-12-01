@@ -24,7 +24,7 @@ import {
   DemoGymapText2_code,
 } from './demo'
 import propsOlTableData from "@/components/propsOlTableData";
-import {ref} from "vue";
+import {ref} from 'vue';
 const propsData = ref([
   {
     shuxing: 'position',

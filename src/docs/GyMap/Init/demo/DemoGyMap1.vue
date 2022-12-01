@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-  import {ref, reactive} from "vue"
+  import {ref, reactive} from 'vue'
   const mapOpt = reactive({})
   let center = ref([116.40531, 39.896884]);
   const zoom = ref(16);

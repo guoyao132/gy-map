@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref, reactive} from "vue"
+import {ref, reactive} from 'vue'
 const mapOpt = reactive({
   // extent: [
   //   [116.519955,39.98711],

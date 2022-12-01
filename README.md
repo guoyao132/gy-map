@@ -6,15 +6,14 @@
 
 或 下载该项目，运行npm run serve.也可阅读离线文档。
 
+该组件支持VUE2.0以及VUE3.0。
+
 # 安装
 
 使用 npm 安装。
 
 ```javascript
-npm
-install
-gy - map--
-save
+npm install gy-map --save
 ```
 
 # 引入
@@ -23,7 +22,7 @@ save
 
 ```javascript
 import {gyMap} from 'gy-Map';
-
+import 'gy-map/style.css'
 app.use(gyMap);
 ```
 

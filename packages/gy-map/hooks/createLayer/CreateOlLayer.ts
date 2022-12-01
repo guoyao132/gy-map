@@ -4,11 +4,11 @@ import type {Geometry} from "ol/geom"
 import type {Vector} from "ol/source"
 import type {Vector as layerVector} from "ol/layer"
 import type {Feature} from "ol"
-import type {ComputedRef, UnwrapRef, Ref} from 'vue'
+import type {ComputedRef, UnwrapRef, Ref} from 'vue-demi'
 import feature from "ol/Feature";
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from "ol/layer/Vector";
-import {computed, watch} from "vue"
+import {computed, watch} from 'vue-demi'
 import type {gyMapType} from '../../index';
 import {gyMap} from '../../index';
 

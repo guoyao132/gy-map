@@ -1,6 +1,6 @@
 import * as components from './components'
 import gyMap from './hooks/gyMap'
-import type {App} from 'vue'
+import type {App} from 'vue-demi'
 
 let install:any = (Vue:App):void => {
   if (!install.installed) {
@@ -22,18 +22,31 @@ let install:any = (Vue:App):void => {
 export default {
   install
 }
-export {gyMap};
 export type {gyMapType, MapOptType} from './hooks/gyMap'
 
 //引用组件
-// import Gymap from "./components/Gymap";
-// import GymapHtml from "./components/GymapHtml";
-// import GymapPolygon from "./components/GymapPolygon";
-// export {
-//   install,
-//   gyMap,
-//   Gymap,
-//   GymapHtml,
-//   GymapPolygon,
-// }
+import {GyMap} from "./components/GyMap";
+import {GymapHtml} from "./components/GymapHtml";
+import {GymapPolygon} from "./components/GymapPolygon";
+import {GymapCircle} from "./components/GymapCircle";
+import {GymapDraw} from "./components/GymapDraw";
+import {GymapHeat} from "./components/GymapHeat";
+import {GymapImage} from "./components/GymapImage";
+import {GymapLine} from "./components/GymapLine";
+import {GymapTask} from "./components/GymapTask";
+import {GymapText} from "./components/GymapText";
+export {
+  install,
+  gyMap,
+  GyMap,
+  GymapHtml,
+  GymapPolygon,
+  GymapCircle,
+  GymapDraw,
+  GymapHeat,
+  GymapImage,
+  GymapLine,
+  GymapTask,
+  GymapText,
+}
 

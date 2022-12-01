@@ -33,7 +33,7 @@ import {
   DemoGymapPolygon3_code,
 
 } from './demo/index'
-import {ref} from "vue"
+import {ref} from 'vue'
 const propsData = ref([
   {
     shuxing: 'positionList',

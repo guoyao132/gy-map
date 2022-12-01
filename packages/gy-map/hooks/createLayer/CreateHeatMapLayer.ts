@@ -2,8 +2,8 @@ import CreateOlLayer from './CreateOlLayer'
 import {Point} from 'ol/geom'
 import {Heatmap as HeatMapLayer, Tile} from 'ol/layer'
 import gyMapUtils from "../gyMapUtils";
-import type {PropType, ComputedRef} from "vue";
-import {computed, watch} from "vue"
+import type {PropType, ComputedRef} from 'vue-demi';
+import {computed, watch} from 'vue-demi'
 import VectorSource from "ol/source/Vector";
 import feature from "ol/Feature";
 import type {Feature} from "ol";

@@ -19,7 +19,7 @@ import {
   DemoGymapHeat1_code,
 } from './demo'
 
-import {ref} from "vue";
+import {ref} from 'vue';
 const propsData = ref([
   {
     shuxing: 'data',

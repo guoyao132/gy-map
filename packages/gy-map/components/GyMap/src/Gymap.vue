@@ -8,13 +8,15 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import {ref, onMounted, watch, onBeforeUnmount} from "vue";
-  import type {Ref, UnwrapRef, PropType} from 'vue';
-  import {gyMap} from "../../../index.ts";
-  import type {gyMapType, MapOptType} from '../../../index'
-  const gyMapObj:UnwrapRef<gyMapType> | null = gyMap(props.id).value;
-  const props = defineProps({
+<script lang="ts">
+import {defineComponent, onMounted, watch, onBeforeUnmount} from 'vue-demi'
+import type {PropType, UnwrapRef, defineComponent as defineComponentOption} from 'vue-demi'
+import {gyMap} from "../../../index.ts";
+import type {gyMapType, MapOptType} from '../../../index'
+
+export default {
+  name: 'Gymap',
+  props: {
     mapOpt: {
       type: Object as PropType<MapOptType>,
       default: () => ({})
@@ -39,41 +41,118 @@
       type: String,
       default: 'map',
     },
-  })
-  onMounted(() => {
-    gyMapObj.init(props.id,{
-      ...props.mapOpt,
-      maplayerIndex: props.maplayerIndex,
-      zoom: props.zoom,
-      centerPoint: props.center,
-      layerOpacity: props.layerOpacity,
+  },
+  setup(props) {
+    const gyMapObj: UnwrapRef<gyMapType> | null = gyMap(props.id).value;
+    onMounted(() => {
+      gyMapObj.init(props.id, {
+        ...props.mapOpt,
+        maplayerIndex: props.maplayerIndex,
+        zoom: props.zoom,
+        centerPoint: props.center,
+        layerOpacity: props.layerOpacity,
+      })
     })
-  })
-  const mouseenterFun = () => {
-    const contentIdDom:HTMLElement | null = document.getElementById(props.id);
-    if(contentIdDom){
-      contentIdDom.focus();
+    const mouseenterFun = () => {
+      const contentIdDom: HTMLElement | null = document.getElementById(props.id);
+      if (contentIdDom) {
+        contentIdDom.focus();
+      }
+    }
+    watch(() => props.zoom, n => {
+      gyMapObj && gyMapObj.zoomSetFun(n);
+    })
+    watch(() => props.maplayerIndex, n => {
+      gyMapObj && gyMapObj.changeMapLayer(n);
+    })
+    watch(() => props.center, n => {
+      gyMapObj && gyMapObj.changeCenterPoint(n);
+    })
+    watch(() => props.layerOpacity, n => {
+      gyMapObj && gyMapObj.setLayerOpacity(n);
+    })
+    onBeforeUnmount(() => {
+      gyMapObj && gyMapObj.destory();
+    })
+
+    return {
+      id: props.id,
+      gyMapObj,
+      mouseenterFun
     }
   }
+}
+/**
+export default defineComponent(
+  {
+    name: 'Gymap',
+    props: {
+      mapOpt: {
+        type: Object as PropType<MapOptType>,
+        default: () => ({})
+      },
+      center: {
+        type: Array as PropType<number[][]>,
+        default: () => ([])
+      },
+      maplayerIndex: {
+        type: Number,
+        default: 0,
+      },
+      zoom: {
+        type: Number,
+        default: 0,
+      },
+      layerOpacity: {
+        type: Number,
+        default: 1,
+      },
+      id: {
+        type: String,
+        default: 'map',
+      },
+    },
+    setup(props) {
+      const gyMapObj: UnwrapRef<gyMapType> | null = gyMap(props.id).value;
+      onMounted(() => {
+        gyMapObj.init(props.id, {
+          ...props.mapOpt,
+          maplayerIndex: props.maplayerIndex,
+          zoom: props.zoom,
+          centerPoint: props.center,
+          layerOpacity: props.layerOpacity,
+        })
+      })
+      const mouseenterFun = () => {
+        const contentIdDom: HTMLElement | null = document.getElementById(props.id);
+        if (contentIdDom) {
+          contentIdDom.focus();
+        }
+      }
+      watch(() => props.zoom, n => {
+        gyMapObj && gyMapObj.zoomSetFun(n);
+      })
+      watch(() => props.maplayerIndex, n => {
+        gyMapObj && gyMapObj.changeMapLayer(n);
+      })
+      watch(() => props.center, n => {
+        gyMapObj && gyMapObj.changeCenterPoint(n);
+      })
+      watch(() => props.layerOpacity, n => {
+        gyMapObj && gyMapObj.setLayerOpacity(n);
+      })
+      onBeforeUnmount(() => {
+        gyMapObj && gyMapObj.destory();
+      })
 
-  watch(() => props.zoom, n => {
-    gyMapObj && gyMapObj.zoomSetFun(n);
-  })
-  watch(() => props.maplayerIndex, n => {
-    gyMapObj && gyMapObj.changeMapLayer(n);
-  })
-  watch(() => props.center, n => {
-    gyMapObj && gyMapObj.changeCenterPoint(n);
-  })
-  watch(() => props.layerOpacity, n => {
-    gyMapObj && gyMapObj.setLayerOpacity(n);
-  })
-  defineExpose({
-    id: props.id,
-  })
-  onBeforeUnmount(() => {
-    gyMapObj && gyMapObj.destory();
-  })
+      return {
+        id: props.id,
+        gyMapObj,
+        mouseenterFun
+      }
+    }
+  } as defineComponentOption)
+ */
 </script>
 
 <style lang='less' scoped>

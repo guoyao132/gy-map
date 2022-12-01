@@ -38,7 +38,7 @@ import {
   DemoGymapTask4,
   DemoGymapTask4_code,
 } from './demo'
-import {ref} from "vue";
+import {ref} from 'vue';
 const propsData = ref([
   {
     shuxing: 'positionList',

@@ -4,8 +4,8 @@ import type {Geometry} from "ol/geom"
 import {Point} from 'ol/geom'
 import {Style, Stroke, Fill, Text} from 'ol/style'
 import gyMapUtils from "../gyMapUtils";
-import type {PropType, ComputedRef} from "vue";
-import {computed} from "vue"
+import type {PropType, ComputedRef} from 'vue-demi';
+import {computed} from 'vue-demi'
 export interface TextStyle {
   text: string[] | string | undefined;
   font?: string | undefined;

@@ -4,7 +4,7 @@
     <p>使用 npm 安装。</p>
     <ShowCode code="npm install gy-map --save" />
     <p>
-      gy-map 仅支持 Vue3，这里我推荐您使用 setup 语法糖。
+      gy-map 支持 Vue3，以及Vue2。
     </p>
     <gy-title>引入</gy-title>
     <p>
@@ -24,6 +24,7 @@
 import ShowCode from '@/components/ShowCode.vue'
 const code1 =
 `import {gyMap} from 'gy-Map';
+import 'gy-map/style.css'
 app.use(gyMap);`;
 const code2 =
 `import {Gymap, GymapHtml} from 'gy-Map'

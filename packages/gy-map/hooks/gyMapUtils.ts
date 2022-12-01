@@ -1,8 +1,4 @@
 import {fromLonLat} from "ol/proj";
-import {Style, Circle, Fill, Stroke, Icon, Text} from 'ol/style'
-import type {Style as olStyleType} from 'ol/style'
-import Point from "ol/geom/Point";
-
 export default {
   /*
   * 将经纬度转换为map中的点位
@@ -18,36 +14,6 @@ export default {
       }
       return fromLonLat([lon, lat]);
     }
-  },
-  getStyleObj(type:string, value:string, style:any):olStyleType | null{
-    let obj:olStyleType | null = null;
-    switch (type){
-      case 'circle':
-        obj = new Style({
-          image: new Circle({
-            radius: style.radius || 5,
-            fill: style.fill ? new Fill({
-              color: style.fill,
-            }) : undefined,
-            stroke: style.stroke ? new Stroke({
-              color: style.stroke,
-            }) : undefined,
-          })
-        })
-        break;
-      case 'icon':
-        obj = new Style({
-          image: new Icon({
-            src: value,
-            anchor: style.arrowAnchor,
-            rotateWithView: true,
-            rotation: style.rotation,
-            scale: style.scale,
-          }),
-        })
-        break
-    }
-    return obj;
   },
   //浮点数加法
   flortAdd: function (num1:number, num2:number):number {

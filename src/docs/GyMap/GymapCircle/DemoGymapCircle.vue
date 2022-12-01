@@ -33,7 +33,7 @@ import {
   DemoGymapCircle4_code,
 } from './demo/index'
 import propsOlTableData from "@/components/propsOlTableData";
-import {ref} from "vue";
+import {ref} from 'vue';
 const propsData = ref([
   {
     shuxing: 'position',

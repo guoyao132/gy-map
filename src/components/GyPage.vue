@@ -22,7 +22,7 @@ watch(route, () => {
 
 const props = defineProps({
   group: {
-    type: Array as PropType<LeftMenuGroup[]>,
+    type: Array as PropType<Array<LeftMenuGroup>>,
     default: () => ([])
   }
 })
