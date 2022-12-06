@@ -1,0 +1,43 @@
+{
+  "name": "gy-map",
+  "description": "gy",
+  "keywords": [
+    "gy",
+    "openlayers",
+    "map components",
+    "Vue2",
+    "Vue3"
+  ],
+  "version": "0.1.6",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "lib",
+    "scripts",
+    "README.md"
+  ],
+  "main": "lib/gy-map.umd.js",
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "dependencies": {
+    "ol": "^7.1.0",
+    "vue-demi": "^0.13.11"
+  },
+  "devDependencies": {
+    "vue": "^3.2.38"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:guoyao132/gy-map.git"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  }
+}

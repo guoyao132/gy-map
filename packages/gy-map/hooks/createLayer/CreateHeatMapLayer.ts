@@ -107,8 +107,6 @@ class CreateHeatMapLayer extends CreateOlLayer{
     let source = new VectorSource({
       features: features
     }) as Vector<PointType>;
-    console.log(features);
-    console.log(this.layer);
     this.layer = new HeatMapLayer({
       source: source,
       blur: this.blur.value,
@@ -120,7 +118,6 @@ class CreateHeatMapLayer extends CreateOlLayer{
       maxZoom: this.maxZoom.value,
       opacity: this.opacity.value,
     })
-    console.log(this.layer);
   }
 
   addLayerWatch(){

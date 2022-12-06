@@ -36,7 +36,6 @@ export default defineComponent({
   setup(props){
     const htmlDom:Ref<HTMLElement | null> = ref(null)
     const {proxy} = getCurrentInstance();
-    console.log(proxy.$parent);
     const mapId:string = proxy.$parent.id;
     const gyMapObj:UnwrapRef<gyMapType> | null = gyMap(mapId).value;
     const mapFinish:Ref<boolean> = computed(() => gyMapObj && gyMapObj.mapFinish);
@@ -62,7 +61,6 @@ export default defineComponent({
       }
     }
     onMounted(() => {
-      console.log(htmlDom.value);
       drawDom()
     })
     watch(() => props.position, p => {

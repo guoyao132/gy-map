@@ -63,6 +63,10 @@ group.value = [
     title: '控件',
     items: [
       {
+        name: 'GymapLonlat',
+        path: '/Gymap/GymapLonlat'
+      },
+      {
         name: 'GymapDraw',
         path: '/GyMap/GymapDraw'
       },

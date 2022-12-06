@@ -14,7 +14,6 @@ export default defineComponent({
     let layerObj:CreateHeatMapLayer = null;
     onMounted(() => {
       layerObj = new CreateHeatMapLayer(mapId, props.position, props);
-      console.log(layerObj);
     })
     const destory = () => {
       layerObj.destory();
