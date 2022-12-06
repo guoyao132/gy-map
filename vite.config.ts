@@ -34,6 +34,7 @@ export default defineConfig(({mode}: ConfigEnv) => {
       alias: {
         'gy-ui': resolve('packages/gy-ui'),
         'gy-map': resolve('packages/gy-map'),
+        'gy-sjmap': resolve('packages/gy-sjmap'),
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       }
     },

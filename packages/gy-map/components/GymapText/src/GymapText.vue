@@ -4,6 +4,7 @@ import {defineComponent, onMounted, onBeforeUnmount, getCurrentInstance} from 'v
 import type {defineComponent as defineComponentOption} from 'vue-demi'
 import CreateTextLayer ,{layerProps} from "../../../hooks/createLayer/CreateTextLayer";
 export default defineComponent({
+  name: 'GymapText',
   props: {
     ...layerProps,
   },

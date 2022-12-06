@@ -1,5 +1,7 @@
 <template>
-  <slot></slot>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 <script lang="ts">
 import {defineComponent, onMounted, watch, onBeforeMount,onBeforeUnmount, computed, getCurrentInstance} from 'vue-demi'
@@ -11,6 +13,7 @@ import type {LineString as linestringType} from "ol/geom";
 type TaskStatus = 'play' | 'stop' | 'pause' | '';
 type AnimateDataType = 'COORDINATE' | 'LONLAT';
 export default defineComponent({
+  name: 'GymapTask',
   props: {
     positionList: {
       type: Array as PropType<number[][]>,
@@ -38,7 +41,7 @@ export default defineComponent({
     }
   },
   emits: ['animate'],
-  setup(props, {emits}){
+  setup(props, {emit}){
     const {proxy} = getCurrentInstance();
     const mapId:string = proxy.$parent.id;
     let canPlay = true;
@@ -91,7 +94,7 @@ export default defineComponent({
         clearTimeout(timer);
         timer = null;
       }
-      if(!layer && !noComponents){
+      if(noComponents ? false : !layer){
         return;
       }
       if(aId){
@@ -116,7 +119,7 @@ export default defineComponent({
       if(props.animateDataType === 'LONLAT'){
         coordinate = toLonLat(coordinate);
       }
-      emits('animate', coordinate, animIndex);
+      emit('animate', coordinate, animIndex);
       if(animIndex > 1){
         stopTask();
         if(props.loop){
@@ -141,11 +144,6 @@ export default defineComponent({
       }
       stopTask();
     }
-    defineExpose({
-      id: mapId,
-      runTask: runTask,
-      destory: destory,
-    })
     onBeforeMount(() => {
       let defaultStr = proxy.$slots.default;
       if(defaultStr){
@@ -172,6 +170,11 @@ export default defineComponent({
         runTask();
       }
     })
+    return {
+      id: mapId,
+      runTask: runTask,
+      destory: destory,
+    }
   }
 } as defineComponentOption)
 </script>

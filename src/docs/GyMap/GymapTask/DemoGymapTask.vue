@@ -2,7 +2,7 @@
   <div class="DemoGymapTask">
     <gy-title>GymapTask</gy-title>
     <p class="sub-title">
-      动画任务
+      动画任务，支持执行动画的组件：GymapHtml、GymapCircle、GymapImage、GymapText
     </p>
     <gy-demo-box title="基础" :code="DemoGymapTask1_code">
       <DemoGymapTask1/>

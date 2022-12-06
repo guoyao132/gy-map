@@ -1,11 +1,14 @@
 <template>
-  <slot></slot>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 <script lang="ts">
 import {defineComponent, onMounted, onBeforeUnmount, getCurrentInstance} from 'vue-demi'
 import type {defineComponent as defineComponentOption} from 'vue-demi'
 import CreateImageLayer ,{layerProps} from "../../../hooks/createLayer/CreateImageLayer";
 export default defineComponent({
+  name: 'GymapImage',
   props: {
     ...layerProps,
   },

@@ -9,6 +9,7 @@ import gyMapUtils from '../../../hooks/gyMapUtils'
 import type {Ref, PropType, UnwrapRef, defineComponent as defineComponentOption} from 'vue-demi'
 import type {gyMapType, MapOptType} from '../../../index'
 export default defineComponent({
+  name: 'GymapPolygon',
   props: {
     //位置
     positionList: {

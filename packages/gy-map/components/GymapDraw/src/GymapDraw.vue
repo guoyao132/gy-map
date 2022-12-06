@@ -105,7 +105,7 @@ export default defineComponent({
     },
   },
   emits: ['drawFinish'],
-  setup(props, {emits}){
+  setup(props, {emit}){
     const drawCon: Ref<HTMLElement | null> = ref(null);
     const {proxy} = getCurrentInstance();
     const mapId: string = proxy.$parent.id;
@@ -117,7 +117,7 @@ export default defineComponent({
     let source: Ref<SourceType.Vector> = ref(null);
     let layer: LayerType.Vector<SourceType.Vector> = null;
     let isInit: boolean = false;
-    let drawType: Ref<DrawType> = ref('Point' as DrawType);
+    const drawType: Ref<DrawType> = ref('Point' as DrawType);
     const status: Ref<string> = ref('');
     const hasFeature: ComputedRef<boolean> = computed(() => source.value && source.value.getFeatures().length != 0);
     const startDraw = () => {
@@ -231,7 +231,7 @@ export default defineComponent({
         }
         data.push(obj);
       })
-      emits('drawFinish', data);
+      emit('drawFinish', data);
     }
     const destory = () => {
       gyMapObj.value.map.removeInteraction(modify);
@@ -250,6 +250,8 @@ export default defineComponent({
       destory();
     })
     return {
+      drawCon,
+      drawType,
       status,
       gyMapObj,
       mapFinish,

@@ -23,11 +23,11 @@
 <script setup lang="ts">
 import ShowCode from '@/components/ShowCode.vue'
 const code1 =
-`import {gyMap} from 'gy-Map';
+`import {gyMap} from 'gy-map';
 import 'gy-map/style.css'
 app.use(gyMap);`;
 const code2 =
-`import {Gymap, GymapHtml} from 'gy-Map'
+`import {Gymap, GymapHtml} from 'gy-map'
 <Gymap
   :mapOpt="mapOpt"
   :zoom="zoom"
